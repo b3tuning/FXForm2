@@ -3,21 +3,25 @@
   <component name="CompilerConfiguration">
     <annotationProcessing>
       <profile default="true" name="Default" enabled="true" />
-      <profile name="Maven default annotation processors profile" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+      <profile name="Gradle Imported" enabled="true">
         <outputRelativeToContentRoot value="true" />
-        <module name="core" />
-        <module name="samples" />
-        <module name="demo" />
-        <module name="extensions" />
+        <processorPath useClasspath="false">
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.12/48e4e5d60309ebd833bc528dcf77668eab3cd72c/lombok-1.18.12.jar" />
+        </processorPath>
+        <module name="FXForm2.samples.test" />
+        <module name="FXForm2.core.test" />
+        <module name="FXForm2.demo.test" />
+        <module name="FXForm2.core.main" />
+        <module name="FXForm2.extensions.main" />
+        <module name="FXForm2.samples.main" />
+        <module name="FXForm2.demo.main" />
+        <module name="FXForm2.extensions.test" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
+    <bytecodeTargetLevel target="14">
       <module name="core" target="1.8" />
       <module name="demo" target="1.8" />
       <module name="extensions" target="1.8" />
-      <module name="FXForm2" target="1.5" />
       <module name="samples" target="1.8" />
     </bytecodeTargetLevel>
   </component>
