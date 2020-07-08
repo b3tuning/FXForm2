@@ -28,7 +28,7 @@ public abstract class AnnotationLoader<A extends Annotation, T> {
 
     private final static Logger logger = Logger.getLogger(AnnotationLoader.class.getName());
 
-    protected T load(Class<? extends Annotation> annotation, Element element) {
+    protected <E> T load(Class<? extends Annotation> annotation, Element<E> element) {
         // check field annotation
         if (element.getAnnotation(annotation) != null) {
             // use factory provided by the annotation

@@ -15,16 +15,17 @@ package com.dooapp.fxform.adapter;
 import com.dooapp.fxform.model.Element;
 import com.dooapp.fxform.utils.AnnotationLoader;
 import com.dooapp.fxform.view.FXFormNode;
+import javafx.scene.Node;
 
 /**
  * User: Antoine Mischler <antoine@dooapp.com>
  * Date: 26/11/2013
  * Time: 11:06
  */
-public class AnnotationAdapterProvider extends AnnotationLoader<FormAdapter, Adapter> implements AdapterProvider {
+public class AnnotationAdapterProvider extends AnnotationLoader<FormAdapter, Adapter<?,?>> implements AdapterProvider {
 
     @Override
-    public Adapter getAdapter(Class fromClass, Class toClass, Element element, FXFormNode fxFormNode) {
+    public <T, V, E, N extends Node> Adapter<T, V> getAdapter(Class<T> fromClass, Class<V> toClass, Element<E> element, FXFormNode<N> fxFormNode) {
         // The adapter annotation should be used only if we are really adapting from the element type to
         // to another type and not in other cases, else an inappropriate adapter is returned for other
         // nodes (label, tooltip,...)

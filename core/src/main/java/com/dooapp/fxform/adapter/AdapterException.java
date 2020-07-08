@@ -19,12 +19,12 @@ package com.dooapp.fxform.adapter;
  */
 public class AdapterException extends Exception {
 
-    public AdapterException(Throwable cause) {
-        super(cause);
-    }
+	public AdapterException(Throwable cause) {
+		super(cause);
+	}
 
-    public AdapterException(String message) {
-        super(message);
-    }
+	public AdapterException(String message) {
+		super(message);
+	}
 
 }

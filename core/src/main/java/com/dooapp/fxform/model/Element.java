@@ -25,55 +25,54 @@ import java.lang.annotation.Annotation;
  */
 public interface Element<WrappedType> extends ReadOnlyProperty<WrappedType>, Disposable {
 
-    /**
-     * The raw type of this element.
-     *
-     * @return
-     */
-    public Class<?> getType();
+	/**
+	 * The raw type of this element.
+	 *
+	 * @return
+	 */
+	Class<?> getType();
 
-    /**
-     * The type wrapped by this element
-     *
-     * @return
-     */
-    public Class<WrappedType> getWrappedType();
+	/**
+	 * The type wrapped by this element
+	 *
+	 * @return
+	 */
+	Class<WrappedType> getWrappedType();
 
-    /**
-     * The source bean of this element.
-     *
-     * @return
-     */
-    public Property sourceProperty();
+	/**
+	 * The source bean of this element.
+	 *
+	 * @return
+	 */
+	Property<?> sourceProperty();
 
-    /**
-     * Similar to Field#getAnnotation
-     *
-     * @param annotationClass
-     * @return
-     */
-    public <T extends Annotation> T getAnnotation(Class<T> annotationClass);
+	/**
+	 * Similar to Field#getAnnotation
+	 *
+	 * @param annotationClass
+	 * @return
+	 */
+	<T extends Annotation> T getAnnotation(Class<T> annotationClass);
 
+	/**
+	 * Return the class declaring this element.
+	 *
+	 * @return
+	 */
+	Class<?> getDeclaringClass();
 
-    /**
-     * Return the class declaring this element.
-     *
-     * @return
-     */
-    public Class getDeclaringClass();
+	/**
+	 * Return the category of this element. The category can be used by the form to group elements.
+	 * Can be null if the element has no category.
+	 *
+	 * @return
+	 */
+	String getCategory();
 
-    /**
-     * Return the category of this element. The category can be used by the form to group elements.
-     * Can be null if the element has no category.
-     *
-     * @return
-     */
-    public String getCategory();
-
-    /**
-     * Set the category of this element.
-     *
-     * @param category
-     */
-    public void setCategory(String category);
+	/**
+	 * Set the category of this element.
+	 *
+	 * @param category
+	 */
+	void setCategory(String category);
 }

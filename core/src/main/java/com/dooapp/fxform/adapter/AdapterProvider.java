@@ -14,6 +14,7 @@ package com.dooapp.fxform.adapter;
 
 import com.dooapp.fxform.model.Element;
 import com.dooapp.fxform.view.FXFormNode;
+import javafx.scene.Node;
 
 /**
  * User: Antoine Mischler <antoine@dooapp.com>
@@ -22,15 +23,15 @@ import com.dooapp.fxform.view.FXFormNode;
  */
 public interface AdapterProvider {
 
-    /**
-     * Provide the adapter from fromClass to toClass for the given element and node.
-     *
-     * @param fromClass
-     * @param toClass
-     * @param element
-     * @param fxFormNode
-     * @return
-     */
-    public Adapter getAdapter(Class fromClass, Class toClass, Element element, FXFormNode fxFormNode);
+	/**
+	 * Provide the adapter from fromClass to toClass for the given element and node.
+	 *
+	 * @param fromClass
+	 * @param toClass
+	 * @param element
+	 * @param fxFormNode
+	 * @return
+	 */
+	<T, V, E, N extends Node> Adapter<T, V> getAdapter(Class<T> fromClass, Class<V> toClass, Element<E> element, FXFormNode<N> fxFormNode);
 
 }

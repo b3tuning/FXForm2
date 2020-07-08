@@ -14,6 +14,7 @@ package com.dooapp.fxform.adapter;
 
 import com.dooapp.fxform.model.Element;
 import com.dooapp.fxform.view.FXFormNode;
+import javafx.scene.Node;
 
 /**
  * User: Antoine Mischler <antoine@dooapp.com>
@@ -22,6 +23,6 @@ import com.dooapp.fxform.view.FXFormNode;
  */
 public interface AdapterMatcher {
 
-    public boolean matches(Class fromClass, Class toClass, Element element, FXFormNode fxFormNode);
+	<T, V, E, N extends Node> boolean matches(Class<T> fromClass, Class<V> toClass, Element<E> element, FXFormNode<N> fxFormNode);
 
 }
